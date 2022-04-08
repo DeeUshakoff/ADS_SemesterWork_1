@@ -19,4 +19,16 @@
     </COMReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="SemesterWork_2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="SemesterWork_2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="SemesterWork_2\**" />
+  </ItemGroup>
+
 </Project>

@@ -41,7 +41,7 @@ internal class Filework
 
         if (!Directory.Exists(Path.GetDirectoryName(path)))
         { "Directory not found".Print(ConsoleColor.Red); return; }
-
+        
         System.Diagnostics.Stopwatch timer = new();
         timer.Start();
 
@@ -53,7 +53,7 @@ internal class Filework
             Random r_symbol = new();
             StringBuilder generated_string = new();
 
-            for (int r_index = 0; r_index < new Random().Next(100, 10001); r_index++) // i < random line length
+            for (int r_index = 0; r_index < new Random().Next(5000, 10001); r_index++) // i < random line length
                 generated_string.Append(alphabet[r_symbol.Next(0, alphabet.Length - 1)]); // adding a random symbol from a-bet to the line
             array[i] = generated_string.ToString();
         }
@@ -73,8 +73,8 @@ internal class Filework
     {
         "Creating Excel file...".Print();
         Application app = new();
-        var workBook = app.Workbooks.Add();
-        var workSheet = (Worksheet)workBook.Worksheets.get_Item(1);
+        
+        var workSheet = (Worksheet)app.Workbooks.Add().Worksheets.get_Item(1);
 
         #region Filling info
         workSheet.Cells[1, 1] = "Result";
@@ -82,7 +82,7 @@ internal class Filework
         workSheet.Cells[1, 3] = "Time, sec";
         workSheet.Cells[1, 4] = "Data size";
         workSheet.Cells[1, 5] = "Total time";
-
+        workSheet.Cells[39, 8] = "As you see, the charts are ~the same";
         workSheet.Columns[2].AutoFit();
         workSheet.Columns[3].ColumnWidth = 10;
         #endregion
