@@ -1,4 +1,4 @@
-﻿namespace SemesterWork;
+﻿namespace SemesterWork.Extensions;
 
 internal static class Extensions
 {

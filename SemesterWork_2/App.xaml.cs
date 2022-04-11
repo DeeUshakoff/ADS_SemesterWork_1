@@ -13,6 +13,7 @@ namespace SemesterWork_2
     /// </summary>
     public partial class App : Application
     {
-        
+        public const double APP_ID = 2326.45;
+        public static MainWindow MainWindow;
     }
 }

@@ -1,9 +1,10 @@
 ﻿namespace SemesterWork;
-
+using SemesterWork.Extensions;
 public class SemesterWorkMain
 {
     public static void Main()
     {
+        
         var path = Directory.GetCurrentDirectory() + "\\data.txt"; // path to the file
         
         var alphabet = "ABCDEFGHIGKLMNOPQRSTUVWXYZ"; // alphabet, from the symbols of that file will be generated

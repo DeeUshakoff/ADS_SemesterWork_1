@@ -5,6 +5,17 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <UseWindowsForms>True</UseWindowsForms>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SemesterWork.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="DeeULib">
+        <HintPath>bin\Debug\net6.0-windows\DeeULib.dll</HintPath>
+      </Reference>
+    </ItemGroup>
 
 </Project>

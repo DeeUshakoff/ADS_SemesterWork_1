@@ -1,5 +1,5 @@
-﻿namespace SemesterWork;
-
+﻿
+namespace SemesterWork;
 internal sealed class BM_Algorithm
 {
     /// <summary>
