@@ -20,15 +20,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Graph\**" />
     <Compile Remove="SemesterWork_2\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Graph\**" />
     <EmbeddedResource Remove="SemesterWork_2\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Graph\**" />
     <None Remove="SemesterWork_2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Graph\Edge.cs" />
+    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="Graph\Vertex.cs" />
   </ItemGroup>
 
 </Project>
