@@ -1,0 +1,61 @@
+﻿<Page xmlns:my="using:Microsoft.UI.Xaml.Controls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Windows.Globalization.NumberFormatting" 
+    x:Class="SemesterWork_2.Views.GenerationPage"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+
+    <Grid x:Name="ContentArea">
+        <Grid
+            Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+            <StackPanel Width="800" Height="600" Spacing="5">
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Limitation of random generation" VerticalAlignment="Center"/>
+                <Grid x:Name="Grid_PacksSlider" d:LayoutOverrides="TopPosition, BottomPosition" Width="730" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" Text="Packs count 20" VerticalAlignment="Center"/>
+
+                    <Slider x:Name="Slider_PacksCount" Width="500" VerticalAlignment="Center" Minimum="20" Maximum="100" Value="20"/>
+
+                    <TextBlock  TextWrapping="Wrap" Text="100" HorizontalAlignment="Left" Margin="640,14,0,15" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
+                </Grid>
+                <Grid x:Name="Grid_PacksCountSliders" d:LayoutOverrides="TopPosition, BottomPosition" Width="730" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" Text="Packs size 100" VerticalAlignment="Center"/>
+
+                    <Slider x:Name="Slider_PacksSize" Width="500" VerticalAlignment="Center" Minimum="100" Maximum="10000" Value="100"/>
+
+                    <TextBlock  TextWrapping="Wrap" Text="10000" HorizontalAlignment="Left" Margin="640,14,0,15" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
+                </Grid>
+                <Grid x:Name="Grid_FileName" d:LayoutOverrides="TopPosition, BottomPosition" Width="500" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <TextBox x:Name="TextBox_FileName" Width="500" TextWrapping="NoWrap" PlaceholderText="File name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+
+
+                <StackPanel  Height="50" Width="500" Spacing="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="Button_Generate" Content="Generate" Click="Button_Generate_Click" IsEnabled="False" Style="{StaticResource AccentButtonStyle}"/>
+                    <Button x:Name="Button_Open" Content="Open" Click="Button_Open_Click"/>
+
+                    <Button x:Name="Button_SetPath"  Content="Set path" Click="Button_SetPath_Click"/>
+
+                </StackPanel>
+                <TextBlock  x:Name="Text_Path" TextWrapping="Wrap" Text="path: " VerticalAlignment="Center" Opacity="0.6" HorizontalAlignment="Left" TextAlignment="Left" Margin="150,0,0,0"/>
+                <Grid Width="500" Height="50">
+
+
+                    <my:NumberBox x:Name="NumberBox_AddValue" ValueChanged="NumberBox_AddValue_ValueChanged" PlaceholderText="vertex value" Margin="86,10,55,8" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                    <Button x:Name="Button_AddValue" IsEnabled="False" Click="Button_AddValue_Click" Content="Add" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    <Button x:Name="Button_CustomGenerate" Click="Button_CustomGenerate_Click" IsEnabled="False" Content="Generate" Style="{StaticResource AccentButtonStyle}" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                </Grid>
+                <my:TreeView x:Name="TreeView_GenerationPage" CanDragItems="False" Height="319" Width="500"/>
+
+            </StackPanel>
+            <my:ProgressRing x:Name="OpenProgress" HorizontalAlignment="Left" Margin="1588,540,0,0" VerticalAlignment="Top" IsActive="False"/>
+
+
+        </Grid>
+        <Button x:Name="test" Content="Button" Margin="1381,591,0,0" VerticalAlignment="Top" Click="Test"/>
+
+    </Grid>
+</Page>
